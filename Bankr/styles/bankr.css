@@ -1,0 +1,22 @@
+#loginViewScreen form button {
+    background-color: #c0392b;
+    color: #ffffff;
+    width: 100%;
+}
+
+#loginViewScreen a {
+    display: block;
+    text-align: center;
+    margin: 1.5em;
+}
+
+.km-spending-e:after, .km-spending-e:before {
+    content: "\e077";
+}
+
+.km-goals-e:after, .km-goals-e:before {
+    content: "\e047";
+}
+.km-stats-e:after, .km-stats-e:before {
+    content: "\e04d";
+}

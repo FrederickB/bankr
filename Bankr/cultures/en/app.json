@@ -5,6 +5,24 @@
     "qrCodeScan": "Scan"
   },
   "home": {
-    "title": "Home View"
+    "title": "Home"
+  },
+  "spendingView": {
+    "title": "Spending"
+  },
+  "goalsView": {
+    "title": "Goals"
+  },
+  "statsView": {
+    "title": "Stats"
+  },
+  "loginView": {
+    "title": "Login"
+  },
+  "createUserView": {
+    "title": "Create account"
+  },
+  "forgotPasswordView": {
+    "title": "Forgot password"
   }
 }

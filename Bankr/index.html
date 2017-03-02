@@ -14,9 +14,17 @@
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="app.js"></script>
+    <script src="bower_components/everlive/min/everlive.all.min.js"></script>
+    <script src="dataProviders/backendServices.js"></script>
 </head>
 
 <body id="kendoUiMobileApp">
+    <script src="components/forgotPasswordView/index.js"></script>
+    <script src="components/createUserView/index.js"></script>
+    <script src="components/loginView/index.js"></script>
+    <script src="components/statsView/index.js"></script>
+    <script src="components/goalsView/index.js"></script>
+    <script src="components/spendingView/index.js"></script>
     <script src="components/home/index.js"></script>
     <div data-role="layout" data-id="main">
         <header data-role="header">
@@ -27,6 +35,9 @@
         <footer data-role="footer">
             <div data-role="tabstrip" id="navigation-container">
                 <a href="components/home/view.html" data-icon="home"><span class="navigation-link-text" data-bind="text: strings.home.title"></span></a>
+                <a href="components/spendingView/view.html" data-icon="spending-e"><span class="navigation-link-text" data-bind="text: strings.spendingView.title"></span></a>
+                <a href="components/goalsView/view.html" data-icon="goals-e"><span class="navigation-link-text" data-bind="text: strings.goalsView.title"></span></a>
+                <a href="components/statsView/view.html" data-icon="stats-e"><span class="navigation-link-text" data-bind="text: strings.statsView.title"></span></a>
             </div>
             <div id="navigation-container-more" style="display: none">
             </div>
@@ -61,7 +72,9 @@
 
     <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
+    <script>
+        $('head').append('<link href="styles/bankr.css" rel="stylesheet">');
+    </script>
     <!-- END_CUSTOM_CODE_kendoUiMobileApp -->
 </body>
 

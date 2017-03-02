@@ -5,19 +5,73 @@
       "type": "kendo-ui-mobile:view",
       "name": "home",
       "components": [],
-      "title": "Home View",
+      "title": "Home",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "spendingView",
+      "components": [],
+      "title": "Spending",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "goalsView",
+      "components": [],
+      "title": "Goals",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "statsView",
+      "components": [],
+      "title": "Stats",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "loginView",
+      "components": [],
+      "title": "Login",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "createUserView",
+      "components": [],
+      "title": "Create account",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "forgotPasswordView",
+      "components": [],
+      "title": "Forgot password",
+      "addToNavigation": false
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "kendo-ui-mobile:dataProvider",
+      "name": "backendServices",
+      "source": "everlive",
+      "everliveKey": "3h18m5qpqk1rmtqv",
+      "offlineStorage": false,
+      "title": "Backend Services"
+    }
+  ],
   "name": "kendoUiMobileApp",
   "navigation": "tabstrip",
-  "view": "home",
+  "view": "loginView",
   "transition": "slide",
   "showMoreTab": true,
   "skin": "nova",
   "skinMainColor": "#32364c",
   "skinTextColor": "#ffffff",
-  "skinAccentColor": "#ff4350"
+  "skinAccentColor": "#c0392b"
 }
