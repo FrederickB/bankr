@@ -1,4 +1,7 @@
-#loginViewScreen form button {
+#loginViewScreen form button,
+#createUserViewScreen form button,
+#forgotPasswordViewScreen form button
+{
     background-color: #c0392b;
     color: #ffffff;
     width: 100%;
@@ -9,7 +12,6 @@
     text-align: center;
     margin: 1.5em;
 }
-
 .km-spending-e:after, .km-spending-e:before {
     content: "\e077";
 }
@@ -19,4 +21,7 @@
 }
 .km-stats-e:after, .km-stats-e:before {
     content: "\e04d";
+}
+.km-logout-e:after, .km-logout-e:before {
+    content: "\e0b2";
 }
