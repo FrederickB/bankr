@@ -1,8 +1,8 @@
 'use strict';
 
 app.home = kendo.observable({
-    onShow: function () { },
-    afterShow: function () { }
+    onShow: function() {},
+    afterShow: function() {}
 });
 app.localization.registerView('home');
 
@@ -10,14 +10,14 @@ app.localization.registerView('home');
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
 app.home = kendo.observable({
-    logout: function (event) {
+    logout: function(event) {
         // Prevent going to the login page until the login call processes.
         event.preventDefault();
-        app.data.backendServices.Users.logout(function () {
+        app.data.backendServices.Users.logout(function() {
             app.loginView.set('username', '');
             app.loginView.set('password', '');
             app.mobileApp.navigate('components/loginView/view.html');;
-        }, function () {
+        }, function() {
             navigator.notification.alert('Unfortunately an error occurred logging out of your account.');
         });
     }

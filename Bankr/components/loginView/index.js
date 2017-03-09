@@ -28,10 +28,10 @@ app.loginView = kendo.observable({
                 navigator.notification.alert("Unfortunately we could not find your account.");
             });
     },
-    createUser: function(){
+    createUser: function() {
         app.mobileApp.navigate("components/createUserView/view.html");
     },
-    forgotPassword: function(){
+    forgotPassword: function() {
         app.mobileApp.navigate("components/forgotPasswordView/view.html");
     }
 });

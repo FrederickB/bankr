@@ -1,8 +1,8 @@
 'use strict';
 
 app.forgotPasswordView = kendo.observable({
-    onShow: function () { },
-    afterShow: function () { }
+    onShow: function() {},
+    afterShow: function() {}
 });
 app.localization.registerView('forgotPasswordView');
 
@@ -10,7 +10,7 @@ app.localization.registerView('forgotPasswordView');
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
 app.forgotPasswordView = kendo.observable({
-    submit: function () {
+    submit: function() {
         if (!this.email) {
             navigator.notification.alert("Email address is required.");
             return;
@@ -19,12 +19,14 @@ app.forgotPasswordView = kendo.observable({
             type: "POST",
             url: "https://api.everlive.com/v1/" + app.data.backendServices.setup.appId + "/Users/resetpassword",
             contentType: "application/json",
-            data: JSON.stringify({ Email: this.email }),
-            success: function () {
+            data: JSON.stringify({
+                Email: this.email
+            }),
+            success: function() {
                 navigator.notification.alert("Your password was successfully reset. Please check your email for instructions on choosing a new password.");
                 app.mobileApp.navigate("components/loginView/view.html");
             },
-            error: function () {
+            error: function() {
                 navigator.notification.alert("Unfortunately, an error occurred while resetting your password.")
             }
         });

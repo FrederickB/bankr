@@ -37,7 +37,10 @@
   "addGoalView": {
     "title": "Add Goal"
   },
-  "editGoal": {
+  "editGoalView": {
     "title": "Edit Goal"
+  },
+  "addCategoryView": {
+    "title": "Add Category"
   }
 }

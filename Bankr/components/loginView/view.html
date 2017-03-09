@@ -1,21 +1,32 @@
-<div data-role="view" data-title="View" data-layout="main-nonav" data-model="app.loginView" data-show="app.loginView.onShow"
-    data-after-show="app.loginView.afterShow" id="loginViewScreen" class="screen">
+<div data-role="view" data-title="View" data-layout="main-nonav" data-model="app.loginView" data-show="app.loginView.onShow" data-after-show="app.loginView.afterShow" id="loginViewScreen" class="screen">
     <header data-role="header">
-        <div data-role="navbar" class="header-text"> <span data-bind="text: strings.loginView.title"></span> </div>
+        <div data-role="navbar" class="header-text">
+
+            <span data-bind="text: strings.loginView.title"></span>
+
+        </div>
     </header>
+
+
     <!-- START_CUSTOM_CODE_loginView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
     <form>
         <ul data-role="listview" data-style="inset">
-            <li> <label>
+            <li>
+                <label>
                     Username:
                     <input type="text" name="username" data-bind="value: username" autocapitalize="none">
-                </label> </li>
-            <li> <label>
+                </label>
+            </li>
+            <li>
+                <label>
                     Password:
                     <input type="password" name="password" data-bind="value: password">
-                </label> </li>
-            <li> <button data-role="button" data-bind="click: submit">Login</button> </li>
+                </label>
+            </li>
+            <li>
+                <button data-role="button" data-bind="click: submit">Login</button>
+            </li>
         </ul>
     </form> <a data-role="button" data-bind="click: createUser">Create an account</a><a data-role="button" data-bind="click: forgotPassword">Forgot password?</a>
     <!-- END_CUSTOM_CODE_loginView -->
