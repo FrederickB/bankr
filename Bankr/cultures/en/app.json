@@ -24,5 +24,20 @@
   },
   "forgotPasswordView": {
     "title": "Forgot password"
+  },
+  "addExpenseView": {
+    "title": "Add Expense"
+  },
+  "editExpenseView": {
+    "title": "Edit Expense"
+  },
+  "searchView": {
+    "title": "Search"
+  },
+  "addGoalView": {
+    "title": "Add Goal"
+  },
+  "editGoal": {
+    "title": "Edit Goal"
   }
 }

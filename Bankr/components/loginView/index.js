@@ -11,6 +11,7 @@ app.localization.registerView('loginView');
 
 app.loginView = kendo.observable({
     submit: function() {
+        console.dir(window.history);
         if (!this.username) {
             navigator.notification.alert("Username is required.");
             return;

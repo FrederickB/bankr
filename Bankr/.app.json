@@ -53,6 +53,41 @@
       "components": [],
       "title": "Forgot password",
       "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "addExpenseView",
+      "components": [],
+      "title": "Add Expense",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "editExpenseView",
+      "components": [],
+      "title": "Edit Expense",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "searchView",
+      "components": [],
+      "title": "Search",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "addGoalView",
+      "components": [],
+      "title": "Add Goal",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "editGoal",
+      "components": [],
+      "title": "Edit Goal",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [
