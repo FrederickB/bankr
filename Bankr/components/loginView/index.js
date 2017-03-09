@@ -11,7 +11,6 @@ app.localization.registerView('loginView');
 
 app.loginView = kendo.observable({
     submit: function() {
-        console.dir(window.history);
         if (!this.username) {
             navigator.notification.alert("Username is required.");
             return;
@@ -23,6 +22,9 @@ app.loginView = kendo.observable({
         app.data.backendServices.Users.login(this.username, this.password,
             function(data) {
                 app.mobileApp.navigate("components/home/view.html");
+                expensesDataSource.read();
+                categoriesDataSource.read();
+                goalsDataSource.read();
             },
             function(err) {
                 navigator.notification.alert("Unfortunately we could not find your account.");

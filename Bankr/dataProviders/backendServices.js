@@ -13,5 +13,22 @@
 
 // START_CUSTOM_CODE_backendServices
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-
+var categoriesDataSource = new kendo.data.DataSource({
+    type: "everlive",
+    transport: {
+        typeName: "Categories"
+    }
+});
+var expensesDataSource = new kendo.data.DataSource({
+    type: "everlive",
+    transport: {
+        typeName: "Expenses"
+    }
+});
+var goalsDataSource = new kendo.data.DataSource({
+    type: "everlive",
+    transport: {
+        typeName: "Goals"
+    }
+});
 // END_CUSTOM_CODE_backendServices
