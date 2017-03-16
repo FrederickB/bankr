@@ -7,9 +7,35 @@
         </div>
     </header>
 
-
     <!-- START_CUSTOM_CODE_addExpenseView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
+    <script>
+        $('div[data-role="navbar"]').append('<a data-role="button" id="leftNavBarBtn" style="margin: 0px" data-align="right" data-icon="reply" data-bind="click: goBack"></a>');
+        $('div#addExpenseViewScreen').attr('data-init', 'initAddExpenceView');
+    </script>
+    <form>
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label for="expenseName">Name</label>
+                <input type="text" id="expenseName" name="expenseName" data-bind="value: expenseName" placeholder="Item">
+            </li>
+            <li>
+                <label for="expenseAmount">Amount</label>
+                <input type="number" min="1" step="any" id="expenseAmount" name="expenseAmount" data-bind="value: expenseAmount" placeholder="22.99">
+            </li>
+            <li>
+                <label for="expenseCategory">Category</label>
+                <select id="expenseCategory">
+                </select>
+            </li>
+            <li>
+                <label for="expenseDateTime">Time</label>
+                <input id="expenseDateTime" name="expenseDateTime" data-bind="value: expenseDateTime">
+            </li>
+            <li>
+                <button data-role="button" data-bind="click: submit">Add</button>
+            </li>
+        </ul>
+    </form>
     <!-- END_CUSTOM_CODE_addExpenseView -->
 </div>

@@ -1,6 +1,7 @@
 #loginViewScreen form button,
 #createUserViewScreen form button,
-#forgotPasswordViewScreen form button
+#forgotPasswordViewScreen form button,
+#addExpenseViewScreen form button
 {
     background-color: #c0392b;
     color: #ffffff;
@@ -12,6 +13,19 @@
     text-align: center;
     margin: 1.5em;
 }
+
+div[data-role="view"] header #leftNavBarBtn {
+    top: 0;
+    position: absolute;
+    left: 0;
+}
+
+div#homeScreen a[data-role="button"] {
+    display: block;
+    text-align: center;
+    margin: 1.5em;
+}
+
 .km-spending-e:after, .km-spending-e:before {
     content: "\e077";
 }

@@ -1,10 +1,11 @@
 <div data-role="view" data-title="View" data-layout="main" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow"
     id="homeScreen" class="screen">
     <header data-role="header">
-        <div data-role="navbar" class="header-text"> <span data-bind="text: strings.home.title"></span>
-            <!-- START_CUSTOM_CODE_home -->
-            <a data-role="button" data-align="right" data-bind="click: logout" data-icon="logout-e"></a>
-            <!-- END_CUSTOM_CODE_home -->
-        </div>
+        <div data-role="navbar" class="header-text"> <span data-bind="text: strings.home.title"></span> </div>
     </header>
+    <!-- START_CUSTOM_CODE_home -->
+    <script>
+        $('div[data-role="navbar"]').append('<a data-role="button" id="leftNavBarBtn" style="margin: 0px" data-align="right" data-bind="click: logout" data-icon="logout-e"></a>');
+    </script> <a data-role="button" data-icon="add" data-bind="click: openAddExpense">Add Expense</a>
+    <!-- END_CUSTOM_CODE_home -->
 </div>
