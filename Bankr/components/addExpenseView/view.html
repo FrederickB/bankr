@@ -10,7 +10,7 @@
     <!-- START_CUSTOM_CODE_addExpenseView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
     <script>
-        $('div[data-role="navbar"]').append('<a data-role="button" id="leftNavBarBtn" style="margin: 0px" data-align="right" data-icon="reply" data-bind="click: goBack"></a>');
+        $('div[data-role="navbar"]').append('<a data-role="button" id="leftNavBarBtn" style="margin: 0px" data-align="left" data-icon="reply" data-bind="click: addExpenseViewModel.goBack"></a>');
         $('div#addExpenseViewScreen').attr('data-init', 'initAddExpenceView');
     </script>
     <form>
@@ -33,7 +33,7 @@
                 <input id="expenseDateTime" name="expenseDateTime" data-bind="value: expenseDateTime">
             </li>
             <li>
-                <button data-role="button" data-bind="click: submit">Add</button>
+                <button data-role="button" data-bind="click: addExpenseViewModel.submit">Add</button>
             </li>
         </ul>
     </form>

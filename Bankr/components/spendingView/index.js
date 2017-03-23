@@ -9,8 +9,8 @@ app.localization.registerView('spendingView');
 // START_CUSTOM_CODE_spendingView
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
-app.spendingView = kendo.observable({
-    onShow: function () {
+(function(parent){
+    parent.onShow = function() {
         var data = [];
 
         expensesDataSource._data.forEach(function(expense){
@@ -27,7 +27,7 @@ app.spendingView = kendo.observable({
             dataSource: data,
             template: '<div><strong>#: ExpenseName # - #: ExpenseCategory #</strong></div> <div>#: CreatedAt.toDateString() # <span class="spending-list-right"><a data-role="button" href="components/editExpenseView/view.html?id=#: Id #">Edit</a></span></div><div>#: ExpenseAmount # $</div>'
         });
-    },
-    afterShow: function () { }
-});
+    };
+})(app.spendingView);
+
 // END_CUSTOM_CODE_spendingView
