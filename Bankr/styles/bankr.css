@@ -39,3 +39,16 @@ div#homeScreen a[data-role="button"] {
 .km-logout-e:after, .km-logout-e:before {
     content: "\e0b2";
 }
+.km-search-e:after, .km-search-e:before{
+    content: "\e07f";
+}
+
+.spending-list-right{
+    float: right;
+}
+
+div[data-role="view"] header #leftNavBarBtn{
+    top: 0px;
+    position: absolute;
+    left: 0;
+}
