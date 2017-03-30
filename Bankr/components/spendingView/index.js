@@ -25,7 +25,7 @@ app.localization.registerView('spendingView');
 
         $("#spending-list").kendoMobileListView({
             dataSource: data,
-            template: '<div><strong>#: ExpenseName # - #: ExpenseCategory #</strong></div> <div>#: CreatedAt.toDateString() # <span class="spending-list-right"><a data-role="button" href="components/editExpenseView/view.html?id=#: Id #">Edit</a></span></div><div>#: ExpenseAmount # $</div>'
+            template: '<div><strong>#: ExpenseName #</strong></div><div>#: ExpenseCategory # - #: CreatedAt.toDateString() # <span class="spending-list-right"><a data-role="button" href="components/editExpenseView/view.html?id=#: Id #">Edit</a></span></div><div>#: ExpenseAmount # $</div>'
         });
     };
 })(app.spendingView);

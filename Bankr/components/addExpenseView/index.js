@@ -46,10 +46,11 @@ app.localization.registerView('addExpenseView');
             };
 
             expensesDataSource.add(expense);
-            expensesDataSource.one('sync', addExpenseViewModel.close);
+            expensesDataSource.one('sync', addExpenseViewModel.readAndClose);
             expensesDataSource.sync();
         },
-        close: function () {
+        readAndClose: function () {
+            expensesDataSource.read();
             app.mobileApp.navigate('components/home/view.html');
         }
     });
