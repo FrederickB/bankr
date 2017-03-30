@@ -12,7 +12,6 @@ app.localization.registerView('addExpenseView');
 (function(parent){
     var addExpenseViewModel = kendo.observable({
         goBack: function() {
-            $('a#navBarLogoutBtn').remove();
             app.mobileApp.navigate('components/home/view.html');
         },
         submit: function(event) {
