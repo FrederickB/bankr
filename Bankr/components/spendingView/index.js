@@ -10,6 +10,14 @@ app.localization.registerView('spendingView');
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
 (function(parent){
+    var viewModel = kendo.observable({
+        doSomething: function(event){
+            var id = event.target[0].getAttribute('itemid');
+            app.editExpenseView.set('id', id);
+            app.mobileApp.navigate('components/editExpenseView/view.html');
+        }
+    });
+
     parent.onShow = function() {
         var data = [];
 
@@ -25,8 +33,10 @@ app.localization.registerView('spendingView');
 
         $("#spending-list").kendoMobileListView({
             dataSource: data,
-            template: '<div><strong>#: ExpenseName #</strong></div><div>#: ExpenseCategory # - #: CreatedAt.toDateString() # <span class="spending-list-right"><a data-role="button" href="components/editExpenseView/view.html?id=#: Id #">Edit</a></span></div><div>#: ExpenseAmount # $</div>'
+            template: '<div><strong>#: ExpenseName #</strong></div><div>#: ExpenseCategory # - #: CreatedAt.toDateString() # <span class="spending-list-right"><a data-role="button" data-bind="click: doSomething" itemid="#: Id #">Edit</a></span></div><div>#: ExpenseAmount # $</div>'
         });
+
+        kendo.bind($('#spending-list li a'), viewModel);
     };
 })(app.spendingView);
 
