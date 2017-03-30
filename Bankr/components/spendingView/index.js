@@ -11,7 +11,7 @@ app.localization.registerView('spendingView');
 
 (function(parent){
     var viewModel = kendo.observable({
-        doSomething: function(event){
+        editExpense: function(event){
             var id = event.target[0].getAttribute('itemid');
             app.editExpenseView.set('id', id);
             app.mobileApp.navigate('components/editExpenseView/view.html');
@@ -33,7 +33,7 @@ app.localization.registerView('spendingView');
 
         $("#spending-list").kendoMobileListView({
             dataSource: data,
-            template: '<div><strong>#: ExpenseName #</strong></div><div>#: ExpenseCategory # - #: CreatedAt.toDateString() # <span class="spending-list-right"><a data-role="button" data-bind="click: doSomething" itemid="#: Id #">Edit</a></span></div><div>#: ExpenseAmount # $</div>'
+            template: '<div><strong>#: ExpenseName #</strong></div><div>#: ExpenseCategory # - #: CreatedAt.toDateString() # <span class="spending-list-right"><a data-role="button" data-bind="click: editExpense" itemid="#: Id #">Edit</a></span></div><div>#: ExpenseAmount # $</div>'
         });
 
         kendo.bind($('#spending-list li a'), viewModel);
