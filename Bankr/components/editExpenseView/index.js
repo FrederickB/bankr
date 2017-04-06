@@ -16,7 +16,7 @@ app.localization.registerView('editExpenseView');
         $('#editExpenseName').val(currentExpense.ExpenseName);
         $('#editExpenseDate').data('kendoDateTimePicker').value(new Date(currentExpense.ExpenseDateTime));
         $('#editExpenseAmount').val(parseFloat(currentExpense.ExpenseAmount).toFixed(2));
-        $('#editExpenseCat option[value="' + currentExpense.ExpenseCategory.Id + '"]').attr('selected', 'selected');
+        $('#editExpenseCate option[value="' + currentExpense.ExpenseCategory.Id + '"]').attr('selected', 'selected');
     };
 
     var editExpenseViewModel = kendo.observable({
@@ -40,7 +40,7 @@ app.localization.registerView('editExpenseView');
             this.Amount = parseFloat(parseFloat(this.Amount).toFixed(2));
             currentExpense.set('ExpenseName', this.editExpenseName);
             currentExpense.set('ExpenseAmount', this.editExpenseAmount);
-            currentExpense.set('ExpenseCategory', this.editExpenseCat);
+            currentExpense.set('ExpenseCategory', this.editExpenseCate);
             currentExpense.set('ExpenseDateTime', this.editExpenseDate);
 
             expensesDataSource.one('sync', editExpenseViewModel.readAndClose);
@@ -62,7 +62,7 @@ function initEdiExpenseView() {
     });
 
     categoriesDataSource._data.forEach(function (category) {
-        $('#editExpenseCat').append('<option value="' + category.Id + '">' + category.CategoryName + '</option>');
+        $('#editExpenseCate').append('<option value="' + category.Id + '">' + category.CategoryName + '</option>');
     });
 }
 
