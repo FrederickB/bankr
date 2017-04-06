@@ -1,15 +1,49 @@
-<div data-role="view" data-title="View" data-layout="main-nonav" data-model="app.searchView" data-show="app.searchView.onShow" data-after-show="app.searchView.afterShow" id="searchViewScreen" class="screen">
+<div data-role="view" data-title="View" data-layout="main-nonav" data-model="app.searchView" data-show="app.searchView.onShow"
+    data-after-show="app.searchView.afterShow" id="searchViewScreen" class="screen">
     <header data-role="header">
-        <div data-role="navbar" class="header-text">
-
-            <span data-bind="text: strings.searchView.title"></span>
-
-        </div>
+        <div data-role="navbar" class="header-text"> <span data-bind="text: strings.searchView.title"></span> </div>
     </header>
-
 
     <!-- START_CUSTOM_CODE_searchView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <script>
+        $('div[data-role="navbar"]').append('<a data-role="button" id="leftNavBarBtn" style="margin: 0px" data-align="right" data-icon="reply" data-bind="click: goBack"></a>');
+        $('div#searchViewScreen').attr('data-init', 'initSearchView');
+    </script>
+    <form id="formCate">
+        <ul data-role="listview" data-style="inset">
+            <li > 
+                <label for="searchViewCategory">Category</label> 
+                <select id="searchViewCategory"  data-bind="value: searchViewCategory ">
+                </select>
+            </li>
+           <li id="li">  
+                <label>*Optionnel 1* <br> Sélectionner 2 dates pour afficher les dépenses entre les dates</label>
+            <li> 
+                <label for="searchViewDate1">Premiere date</label> <input id="searchViewDate1" type="date" data-bind="value: searchViewDate1">                
+            </li>
+            <li> 
+                <label for="searchViewDate2">Seconde date</label> <input id="searchViewDate2" type="date" data-bind="value: searchViewDate2">  
+            <li id="li">  
+                <label>*Optionnel 2* <br> Insérer un nom pour afficher les dépenses correspondantes</label>
+            <li> 
+              
+             <li> 
+                <label for="searchViewNom">Nom</label> <input id="searchViewNom" type="text" data-bind="value: searchViewNom">                
+            </li>
+            <li> 
+                <button data-role="button" data-bind="click: searchViewModel.submit">Search</button> 
+            </li>
+        </ul>
+    </form>
 
+    <ul id="searchResult"></ul>
+
+    <style>
+        #li{
+            display: block;
+            text-align: center;
+        }
+    </style>
     <!-- END_CUSTOM_CODE_searchView -->
 </div>
