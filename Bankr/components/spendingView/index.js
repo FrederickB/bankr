@@ -27,8 +27,12 @@ app.localization.registerView('spendingView');
             obj.CreatedAt = expense.CreatedAt;
             obj.ExpenseName = expense.ExpenseName;
             obj.ExpenseCategory = expense.ExpenseCategory.CategoryName;
-            obj.ExpenseAmount = Math.round(parseFloat(expense.ExpenseAmount)).toFixed(2);
+            obj.ExpenseAmount = expense.ExpenseAmount.toFixed(2);
             data.push(obj);
+        });
+
+        data.sort(function(a,b){
+            return new Date(b.CreatedAt) - new Date(a.CreatedAt); 
         });
 
         $("#spending-list").kendoMobileListView({

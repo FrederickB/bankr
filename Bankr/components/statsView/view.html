@@ -10,6 +10,28 @@
 
     <!-- START_CUSTOM_CODE_statsView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <script>
+        $('div#statsViewScreen').attr('data-init', 'initStatsView')
+    </script>
+    <div id="selectCategories">
+        <h1 style="text-align: center">Select categories :</h1>
+        <select multiple="multiple" id="catSelect" class="centerSelect" style="width: 300px" data-placeholder="Please choose one or more category...">
+        </select>
+    </div>
 
+    <div id="interval"  style="display: block; margin-top: 10%;">
+        <h1 id="totalCourantInterval" style="text-align: center" data-bind="text: total">0$</h1>
+        <select id="selectInterval" class="centerSelect">
+            <option value="0" selected="selected">Today</option>
+            <option value="1">Last 7 days</option>
+            <option value="2">Last 30 days</option>
+            <option value="3">Last year</option>
+        </select>
+    </div>
+
+    <div style="margin: 4%">
+        <div id="chart" style="centerSelect">
+        </div>
+    </div>
     <!-- END_CUSTOM_CODE_statsView -->
 </div>
