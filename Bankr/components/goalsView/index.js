@@ -25,7 +25,9 @@ app.localization.registerView('goalsView');
             var sum = 0;
             expensesDataSource._data
                 .filter(function (expense) {
-                    return expense.ExpenseCategory.Id === goal.GoalCategory.Id;
+                    if (expense.ExpenseDateTime < goal.GoalEndDate && expense.ExpenseDateTime > goal.GoalStartDate){
+                        return expense.ExpenseCategory.Id === goal.GoalCategory.Id;
+                    }
                 })
                 .forEach(function (expense) {
                     sum += expense.ExpenseAmount;
