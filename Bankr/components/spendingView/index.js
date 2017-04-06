@@ -37,7 +37,7 @@ app.localization.registerView('spendingView');
 
         $("#spending-list").kendoMobileListView({
             dataSource: data,
-            template: '<div><strong>#: ExpenseName #</strong></div><div>#: ExpenseCategory # - #: ExpenseDateTime.toDateString() # <span class="spending-list-right"><a data-role="button" data-bind="click: editExpense" itemid="#: Id #">Edit</a></span></div><div>#: ExpenseAmount # $</div>'
+            template: '<div><strong>#: ExpenseName #</strong></div><div>#: ExpenseCategory # - #: ExpenseDateTime.toDateString() # <span class="spending-list-right"><a data-role="button" data-icon="compose" data-bind="click: editExpense" itemid="#: Id #"></a></span></div><div>#: ExpenseAmount # $</div>'
         });
 
         kendo.bind($('#spending-list li a'), viewModel);
