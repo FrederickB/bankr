@@ -38,7 +38,17 @@ var expensesDataSource = new kendo.data.DataSource({
 var goalsDataSource = new kendo.data.DataSource({
     type: "everlive",
     transport: {
-        typeName: "Goals"
+        typeName: "Goals",
+        read: {
+            contentType: "application/json",
+            headers: {
+                "X-Everlive-Expand": JSON.stringify({
+                    "GoalCategory": {
+                        "TargetTypeName": "Categories"
+                    }
+                })
+            }
+        }
     }
 });
 // END_CUSTOM_CODE_backendServices

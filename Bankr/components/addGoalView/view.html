@@ -1,14 +1,46 @@
-<div data-role="view" data-title="View" data-layout="main-nonav" data-model="app.addGoalView" data-show="app.addGoalView.onShow" data-after-show="app.addGoalView.afterShow" id="addGoalViewScreen" class="screen">
+<div data-role="view" data-title="View" data-layout="main-nonav" data-model="app.addGoalView" 
+data-show="app.addGoalView.onShow" data-after-show="app.addGoalView.afterShow" id="addGoalViewScreen" 
+class="screen">
     <header data-role="header">
-        <div data-role="navbar" class="header-text">
-
-            <span data-bind="text: strings.addGoalView.title"></span>
-
+        <div data-role="navbar" >
+         <span data-bind="text: strings.addGoalView.title"></span>
         </div>
     </header>
 
 
     <!-- START_CUSTOM_CODE_addGoalView -->
+    <script>
+    $('div[data-role="navbar"]').append('<a data-role="button" id="leftNavBarBtn" style="margin: 0px" data-align="left" data-icon="reply" data-bind="click: addGoalViewModel.goBack"></a>');
+    $('div#addGoalViewScreen').attr('data-init', 'initAddGoalView');
+    </script>
+    <form>
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label> Title </label>
+                <input id="goalTitle"  type="text"  data-bind="value: goalTitle ">
+            </li>
+             <li>
+                <label ">Category</label> 
+                <select id="addGoalCategories" data-bind="value: selects"> </select>
+             </li>
+            <li>
+                <label for="goalAmount">Amount</label>
+                <input type="number" min="1" step="any" id="goalAmount" name="goalAmount" data-bind="value: goalAmount" placeholder="22.99">
+            </li>
+            <li>
+                <label for="goalDateTimeStart">Time start</label>
+                <input id="goalDateTimeStart" name="goalDateTimeStart" data-bind="value: goalDateTimeStart">
+            </li>
+            <li>
+                <label for="goalDateTimeEnd">Time end</label>
+                <input id="goalDateTimeEnd" name="goalDateTimeEnd" data-bind="value: goalDateTimeEnd">
+            </li>
+            <li>
+                <button data-role="button" data-bind="click: addGoalViewModel.submit">Add</button>
+            </li>
+            
+        </ul>
+    </form>
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
 
     <!-- END_CUSTOM_CODE_addGoalView -->
