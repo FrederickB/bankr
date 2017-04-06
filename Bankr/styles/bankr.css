@@ -15,8 +15,11 @@
     margin: 1.5em;
 }
 
-#spendingViewScreen li a {
+#spendingViewScreen li a,
+#homeScreen button {
     border-style: none;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 div[data-role="view"] header #leftNavBarBtn {
@@ -61,4 +64,30 @@ div[data-role="view"] header #leftNavBarBtn{
 .centerSelect {
     display: block;
     margin: 0 auto;
+}
+
+/* New Css from Matthew */
+.km-back-e:after, .km-back-e:before{
+    content: "\e317";
+    transform: rotate(180deg);
+}
+.km-forward-e:after, .km-forward-e:before{
+    content: "\e317";
+}
+
+#displayed-spending-title{
+    padding-top: 2.5%;
+    text-align: center;
+    font-size: 32px;
+}
+#displayed-spending-amount{
+    text-align: center;
+    font-size: 64px;
+}
+#dataLapseSelectDiv{
+    text-align: center;
+}
+#displayed-spending-type{
+    display: inline-block;
+    width: 33%;
 }
