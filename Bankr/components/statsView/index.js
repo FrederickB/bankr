@@ -42,7 +42,6 @@ function changeInterval() {
                 createChart(categoriesTotals);
                 break;
             case 'Last 7 days':
-                //$('#totalCourantInterval').text(intervalWeekly(categoriesValues) + '$');
                 var dsInterval = intervalWeekly();
                 var result = expensesByCategories(dsInterval, categoriesValues);
                 var total = getExpensesSum(result);
@@ -334,16 +333,19 @@ function sumByCategories(ds, categories, grandTotal) {
             view = this.view();
         });
         if (view[0]) {
+            var percentage = 0.0;
             var total = 0.0;
             view.forEach(function (item) {
                 total = total + item.ExpenseAmount;
             });
-            total = (total / grandTotal) * 100.0;
+            percentage = (total / grandTotal) * 100.0;
         } else {
+            var percentage = 0.0;
             var total = 0.0;
         }
-        var totalFixed = total.toFixed(0);
-        var categoryNameAndTotal = { 'category': categoryName, 'percentage': totalFixed };
+        var percentageFixed = percentage.toFixed(0);
+        var totalFixed = total.toFixed(2);
+        var categoryNameAndTotal = { 'category': categoryName, 'percentage': percentageFixed, 'total': totalFixed };
         result.push(categoryNameAndTotal);
     });
     return result;
@@ -351,29 +353,41 @@ function sumByCategories(ds, categories, grandTotal) {
 
 // Cree le PieChart selon l'interval et les categories choisis
 function createChart(categoriesPercentage) {
-    $("#chart").kendoChart({
-        title: {
-            position: 'top',
-            text: 'Expenses by Categories and Interval',
-            color: 'black'
-        },
-        legend: {
-            position: 'bottom',
-            visible: true
-        },
-        dataSource: categoriesPercentage,
-        chartArea: {
-            background: ''
-        },
-        series: [{
-            type: 'pie',
-            field: 'percentage',
-            categoryField: 'category'
-        }],
-        tooltip: {
-            visible: true,
-            template: "#= category # - #= kendo.format('{0:P}', percentage) #"
-        }
+    console.log(categoriesPercentage);
+    // On reinitialise le div ayant l'id CHART affichant les resultats de cette fonction
+    document.getElementById('chart').innerHTML = '';
+    var total = 0;
+    // On verifie si des depenses ont ete trouve en additionnant le pourcentage de chaque categorie
+    categoriesPercentage.forEach(function (category) {
+        total += category.percentage;
     });
+    if (total == 0) {
+        document.getElementById('chart').innerHTML = '<div style="margin-top: 10%"><h1 style="text-align: center">No expense found.</h1></div>';
+    } else {
+        $('#chart').kendoChart({
+            title: {
+                position: 'top',
+                text: 'Expenses by Categories and Interval',
+                color: 'black'
+            },
+            legend: {
+                position: 'bottom',
+                visible: true
+            },
+            dataSource: categoriesPercentage,
+            chartArea: {
+                background: ''
+            },
+            series: [{
+                type: 'pie',
+                field: 'percentage',
+                categoryField: 'category'
+            }],
+            tooltip: {
+                visible: true,
+                template: "#= category #: #= kendo.format('{0:P}', percentage) # - #= dataItem.total #$"
+            }
+        });
+    }
 }
 // END_CUSTOM_CODE_statsView
