@@ -15,20 +15,20 @@ wad<div data-role="view" data-title="View" data-layout="main-nonav" data-model="
         <ul data-role="listview" data-style="inset">
             <li>
                 <label>Title</label>
-                <input type="text" id="Name" data-bind="value: Name">
+                <input type="text" id="editExpenseName" data-bind="value: editExpenseName">
             </li>
             <li>
                 <label>Category</label> 
-                <select id="Select"  data-bind="value: Category ">
+                <select id="editExpenseCat"  data-bind="value: editExpenseCat ">
                 </select>
              </li>
             <li>
                 <label>Amount</label>
-                <input id="Amount" type="number" data-bind="value: Amount ">
+                <input id="editExpenseAmount" type="number" data-bind="value: editExpenseAmount ">
             </li>
             <li>
                 <label>Date</label>
-                <input id="Date" type="date" data-bind="value: Date ">
+                <input id="editExpenseDate" type="date" data-bind="value: editExpenseDate ">
             </li>
             <li>
                 <button data-role="button" data-bind="click: editExpenseViewModel.submit">Modify</button>
