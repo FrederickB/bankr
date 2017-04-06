@@ -24,7 +24,7 @@ app.localization.registerView('spendingView');
         expensesDataSource._data.forEach(function(expense){
             var obj = {};
             obj.Id = expense.Id;
-            obj.CreatedAt = expense.CreatedAt;
+            obj.ExpenseDateTime = new Date(expense.ExpenseDateTime);
             obj.ExpenseName = expense.ExpenseName;
             obj.ExpenseCategory = expense.ExpenseCategory.CategoryName;
             obj.ExpenseAmount = expense.ExpenseAmount.toFixed(2);
@@ -32,12 +32,12 @@ app.localization.registerView('spendingView');
         });
 
         data.sort(function(a,b){
-            return new Date(b.CreatedAt) - new Date(a.CreatedAt); 
+            return new Date(b.ExpenseDateTime) - new Date(a.ExpenseDateTime); 
         });
 
         $("#spending-list").kendoMobileListView({
             dataSource: data,
-            template: '<div><strong>#: ExpenseName #</strong></div><div>#: ExpenseCategory # - #: CreatedAt.toDateString() # <span class="spending-list-right"><a data-role="button" data-bind="click: editExpense" itemid="#: Id #">Edit</a></span></div><div>#: ExpenseAmount # $</div>'
+            template: '<div><strong>#: ExpenseName #</strong></div><div>#: ExpenseCategory # - #: ExpenseDateTime.toDateString() # <span class="spending-list-right"><a data-role="button" data-bind="click: editExpense" itemid="#: Id #">Edit</a></span></div><div>#: ExpenseAmount # $</div>'
         });
 
         kendo.bind($('#spending-list li a'), viewModel);

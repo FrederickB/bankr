@@ -22,10 +22,14 @@ app.localization.registerView('loginView');
             }
             app.data.backendServices.Users.login(this.username, this.password,
                 function(data) {
-                    app.mobileApp.navigate("components/home/view.html");
-                    expensesDataSource.read();
-                    categoriesDataSource.read();
-                    goalsDataSource.read();
+                    expensesDataSource.read()
+                    .then(function(){
+                        categoriesDataSource.read();
+                    }).then(function(){
+                        goalsDataSource.read();
+                    }).then(function(){
+                        app.mobileApp.navigate("components/home/view.html");
+                    });
                 },
                 function(err) {
                     navigator.notification.alert("Unfortunately we could not find your account.");
