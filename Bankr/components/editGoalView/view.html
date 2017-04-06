@@ -1,15 +1,32 @@
 <div data-role="view" data-title="View" data-layout="main-nonav" data-model="app.editGoalView" data-show="app.editGoalView.onShow" data-after-show="app.editGoalView.afterShow" id="editGoalViewScreen" class="screen">
     <header data-role="header">
         <div data-role="navbar" class="header-text">
-
+            
             <span data-bind="text: strings.editGoalView.title"></span>
 
         </div>
-    </header>
-
-
+    </header>     
+   
     <!-- START_CUSTOM_CODE_editGoalView -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
-    <!-- END_CUSTOM_CODE_editGoalView -->
+    <script>
+        $('div[data-role="navbar"]').append('<a data-role="button" id="leftNavBarBtn" style="margin: 0px" data-align="left" data-icon="reply" data-bind="click: editGoalViewModel.goBack"></a>');
+        $('div#editGoalViewScreen').attr('data-init', 'initEditGoalView');
+    </script>
+    <form>
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label ">Category</label> 
+                <select id="editGoalCategories" data-bind="value: selects"> </select>
+             </li>
+            <li>
+                <label>Goal Amount</label> 
+                <input type="number" id="amount" min="1" step="0.01" placeholder="0.00" data-bind="value: amount"></input>
+            </li>
+            <li>
+                <button id ="submit" data-role="button" data-bind="click: editGoalViewModel.submit" type ="button">Validate</button>
+            </li>
+        </ul>
+    </form>
+</div>
+    <!-- END_CUSTOM_CODE_editExpenseView -->
 </div>

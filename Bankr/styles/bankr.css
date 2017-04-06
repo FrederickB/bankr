@@ -1,7 +1,8 @@
 #loginViewScreen form button,
 #createUserViewScreen form button,
 #forgotPasswordViewScreen form button,
-#addExpenseViewScreen form button
+#addExpenseViewScreen form button,
+#editExpenseViewScreen form button
 {
     background-color: #c0392b;
     color: #ffffff;
@@ -12,6 +13,10 @@
     display: block;
     text-align: center;
     margin: 1.5em;
+}
+
+#spendingViewScreen li a {
+    border-style: none;
 }
 
 div[data-role="view"] header #leftNavBarBtn {
