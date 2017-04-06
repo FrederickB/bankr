@@ -52,3 +52,8 @@ div[data-role="view"] header #leftNavBarBtn{
     position: absolute;
     left: 0;
 }
+
+.centerSelect {
+    display: block;
+    margin: 0 auto;
+}
