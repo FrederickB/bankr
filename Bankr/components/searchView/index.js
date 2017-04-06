@@ -51,7 +51,7 @@ app.localization.registerView('searchView');
                 } else if (categoryCheckAll && nomCheck && dateCheck){
                 var obj2 = {};
                 obj2.Id = expense.Id;
-                obj2.ExpenseDateTime = expense.ExpenseDateTime;
+                obj2.ExpenseDateTime = new Date(expense.ExpenseDateTime);
                 obj2.ExpenseName = expense.ExpenseName;
                 obj2.ExpenseCategory = expense.ExpenseCategory.CategoryName;
                 obj2.ExpenseAmount = parseFloat(parseFloat(expense.ExpenseAmount)).toFixed(2);
@@ -62,7 +62,7 @@ app.localization.registerView('searchView');
 
     $("#searchResult").kendoMobileListView({
         dataSource: data2,
-        template: '<div><strong>#: ExpenseName # - #: ExpenseCategory #</strong></div> <div>#: ExpenseDateTime # <span class="spending-list-right"><a data-role="button" href="components/editExpenseView/view.html?id=#: Id #">Edit</a></span></div><div>#: ExpenseAmount # $</div>'
+        template: '<div><strong>#: ExpenseName # - #: ExpenseCategory #</strong></div> <div>#: ExpenseDateTime.toDateString() # <span class="spending-list-right"><a data-role="button" href="components/editExpenseView/view.html?id=#: Id #">Edit</a></span></div><div>#: ExpenseAmount # $</div>'
     });
 
 }
