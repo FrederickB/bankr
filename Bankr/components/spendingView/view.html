@@ -12,6 +12,9 @@
         $('div[data-role="navbar"]').append('<a href="components/searchView/view.html" data-role="button" data-align="left" data-icon="search-e" id="leftNavBarBtn"></a>');
     </script>
 
+    <div style="border-bottom: solid 0.5px; border-color: #dfe1e2; padding: 1em 0px; text-align:center;">
+        <button data-role="button" data-icon="add" style="width: 95%" data-bind="click: spendingViewModel.openAddExpenseView">Add Expense</button>
+    </div>
     <ul id="spending-list"></ul>
     <!-- END_CUSTOM_CODE_spendingView -->
 </div>

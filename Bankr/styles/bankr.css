@@ -2,11 +2,18 @@
 #createUserViewScreen form button,
 #forgotPasswordViewScreen form button,
 #addExpenseViewScreen form button,
-#editExpenseViewScreen form button
+#editExpenseViewScreen form button,
+#homeScreen ul li:last-child button,
+#goalsViewScreen > div.km-content.km-widget.km-scroll-wrapper > div.km-scroll-container > div:nth-child(1) > button,
+#spendingViewScreen > div.km-content.km-widget.km-scroll-wrapper > div.km-scroll-container > div:nth-child(2) > button
 {
     background-color: #c0392b;
     color: #ffffff;
     width: 100%;
+}
+
+#home-list > li:nth-child(4) > span {
+    display: none;
 }
 
 #loginViewScreen a {
@@ -15,8 +22,9 @@
     margin: 1.5em;
 }
 
+#goalsViewScreen li a,
 #spendingViewScreen li a,
-#homeScreen button {
+#homeScreen li button {
     border-style: none;
     padding-left: 25px;
     padding-right: 25px;

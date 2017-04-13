@@ -1,16 +1,28 @@
-   asdadsa<div data-role="view" data-title="View" data-layout="main" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow"
+<div data-role="view" data-title="View" data-layout="main" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow"
     id="homeScreen" class="screen">
     <header data-role="header">
         <div data-role="navbar" class="header-text"> <span data-bind="text: strings.home.title"></span> </div>
     </header>
     <!-- START_CUSTOM_CODE_home -->
-    <h1 id="displayed-spending-title">Total Expenses</h1>
-    <h1 id="displayed-spending-amount"></h1>
-    <div id="dataLapseSelectDiv"><button data-role="button" data-icon="back-e" data-bind="click: homeModel.showPreviousDataLapseType"></button><span id="displayed-spending-type"></span><button data-role="button" data-icon="forward-e" data-bind="click: homeModel.showNextDataLapseType"></button></div>
-
+    <ul id="home-list">
+        <li>
+            <h1 id="displayed-spending-title">Total</h1> </li>
+        <li>
+            <h1 id="displayed-spending-amount"></h1> </li>
+        <li>
+            <div id="dataLapseSelectDiv"><button data-role="button" data-icon="back-e" data-bind="click: homeModel.showPreviousDataLapseType"></button>
+                <span id="displayed-spending-type"></span>
+                <button data-role="button" data-icon="forward-e" data-bind="click: homeModel.showNextDataLapseType"></button>
+            </div>
+        </li>
+        <li>
+            <button data-icon="add" data-role="button" data-bind="click: homeModel.openAddExpense">Add Expense</button>
+        </li>
+    </ul>
     <script>
         $('div[data-role="navbar"]').append('<a data-role="button" id="leftNavBarBtn" style="margin: 0px" data-align="left" data-bind="click: homeModel.logout" data-icon="logout-e"></a>');
         $('div#homeScreen').attr('data-init', 'initHomeView');
-    </script> <a data-role="button" data-icon="add" data-bind="click: homeModel.openAddExpense">Add Expense</a>
+        $('#home-list').kendoMobileListView();
+    </script>
     <!-- END_CUSTOM_CODE_home -->
 </div>

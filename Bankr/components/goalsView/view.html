@@ -9,10 +9,10 @@ data-show="app.goalsView.onShow" data-after-show="app.goalsView.afterShow" id="g
     </header>
     <!-- START_CUSTOM_CODE_goalsView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->.
-    <a data-role="button" data-icon="add" href="components/addGoalView/view.html"> Add Goal</a>
-    <ul id = "goals-list"></ul>
-
-
-
+    <div style="border-bottom: solid 0.5px; border-color: #dfe1e2; padding-bottom: 1em; text-align:center;">
+        <button data-role="button" data-icon="add" data-bind="click: goalsViewModel.openAddGoalView" style="width: 95%"> Add Goal</button>
+    </div>
+    <ul id = "goals-list">
+    </ul>
     <!-- END_CUSTOM_CODE_goalsView -->
 </div>

@@ -15,8 +15,13 @@ app.localization.registerView('spendingView');
             var id = event.target[0].getAttribute('itemid');
             app.editExpenseView.set('id', id);
             app.mobileApp.navigate('components/editExpenseView/view.html');
+        },
+        openAddExpenseView : function(){
+            app.mobileApp.navigate('components/addExpenseView/view.html');
         }
     });
+
+    parent.spendingViewModel = viewModel;
 
     parent.onShow = function() {
         var data = [];
