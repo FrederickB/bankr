@@ -12,7 +12,7 @@ app.localization.registerView('addExpenseView');
 (function(parent){
     var addExpenseViewModel = kendo.observable({
         goBack: function() {
-            app.mobileApp.navigate('components/home/view.html');
+            app.mobileApp.navigate('#:back');
         },
         submit: function(event) {
             event.preventDefault();
@@ -50,8 +50,9 @@ app.localization.registerView('addExpenseView');
             expensesDataSource.sync();
         },
         readAndClose: function () {
-            expensesDataSource.read();
-            app.mobileApp.navigate('components/home/view.html');
+            expensesDataSource.read().then(function(){
+                app.mobileApp.navigate('#:back');
+            });
         }
     });
 
