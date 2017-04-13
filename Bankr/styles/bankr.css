@@ -6,7 +6,7 @@
 #homeScreen ul li:last-child button,
 #goalsViewScreen > div.km-content.km-widget.km-scroll-wrapper > div.km-scroll-container > div:nth-child(1) > button,
 #spendingViewScreen > div.km-content.km-widget.km-scroll-wrapper > div.km-scroll-container > div:nth-child(2) > button,
-#searchViewScreen ul li #bt1
+#searchViewScreen ul li #bt1, #editGoalViewScreen ul li #submit
 {
     background-color: #c0392b;
     color: #ffffff;
