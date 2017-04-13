@@ -7,36 +7,33 @@
     <!-- START_CUSTOM_CODE_searchView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
     <script>
-        $('div[data-role="navbar"]').append('<a data-role="button" id="leftNavBarBtn" style="margin: 0px" data-align="right" data-icon="reply" data-bind="click: goBack"></a>');
+        $('div[data-role="navbar"]').append('<a data-role="button" id="leftNavBarBtn" style="margin: 0px" data-align="left" data-icon="reply" data-bind="click: searchViewModel.goBack"></a>');
         $('div#searchViewScreen').attr('data-init', 'initSearchView');
     </script>
-    <form id="formCate">
-        <ul data-role="listview" data-style="inset">
-            <li > 
-                <label for="searchViewCategory">Category</label> 
-                <select id="searchViewCategory"  data-bind="value: searchViewCategory ">
-                </select>
-            </li>
-           <li id="li">  
-                <label>*Optionnel 1* <br> Sélectionner 2 dates pour afficher les dépenses entre les dates</label>
-            <li> 
-                <label for="searchViewDate1">Premiere date</label> <input id="searchViewDate1" type="date" data-bind="value: searchViewDate1">                
-            </li>
-            <li> 
-                <label for="searchViewDate2">Seconde date</label> <input id="searchViewDate2" type="date" data-bind="value: searchViewDate2">  
-            <li id="li">  
-                <label>*Optionnel 2* <br> Insérer un nom pour afficher les dépenses correspondantes</label>
-            <li> 
-              
-             <li> 
-                <label for="searchViewNom">Nom</label> <input id="searchViewNom" type="text" data-bind="value: searchViewNom">                
-            </li>
-            <li> 
-                <button data-role="button" data-bind="click: searchViewModel.submit">Search</button> 
-            </li>
-        </ul>
-    </form>
+    <div id="formSearchView">
+        <form id="formSV">
+            <ul data-role="listview" data-style="inset" id="ulSearchView">
+                <li> 
+                    <label for="searchViewNom">Name</label> <input id="searchViewNom" type="text" data-bind="value: searchViewNom">                
+                </li>
+                <li> 
+                    <label for="searchViewCategory">Category</label> 
+                    <select id="searchViewCategory"  data-bind="value: searchViewCategory ">
+                    </select>
+                </li>
+                <li>
+                    <label for="searchViewDate1">Start date</label> <input id="searchViewDate1" type="date" data-bind="value: searchViewDate1">                
+                </li>
+                <li> 
+                    <label for="searchViewDate2">End date</label> <input id="searchViewDate2" type="date" data-bind="value: searchViewDate2">
+                </li>
 
+                <li> 
+                    <button data-icon="search-e" data-role="button" data-bind="click: searchViewModel.submit" id="bt1">Search</button> 
+                </li>
+            </ul>
+        </form>
+    </div>
     <ul id="searchResult"></ul>
 
     <style>

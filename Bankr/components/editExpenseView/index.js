@@ -21,7 +21,7 @@ app.localization.registerView('editExpenseView');
 
     var editExpenseViewModel = kendo.observable({
         goBack: function () {
-            app.mobileApp.navigate('components/spendingView/view.html');
+            app.mobileApp.navigate('#:back');
         },
 
         submit: function (event) {
@@ -48,7 +48,7 @@ app.localization.registerView('editExpenseView');
         },
         readAndClose: function () {
             expensesDataSource.read().then(function () {
-                app.mobileApp.navigate('components/spendingView/view.html');
+                app.mobileApp.navigate('#:back');
             });
         }
     });
