@@ -16,23 +16,23 @@ class="screen">
     <form>
         <ul data-role="listview" data-style="inset">
             <li>
-                <label> Title </label>
-                <input id="goalTitle"  type="text"  data-bind="value: goalTitle ">
+                <label>Title</label>
+                <input id="goalTitle" type="text" data-bind="value: goalTitle" placeholder="Goal">
             </li>
              <li>
-                <label ">Category</label> 
-                <select id="addGoalCategories" data-bind="value: selects"> </select>
+                <label>Category</label> 
+                <select id="addGoalCategories" data-bind="value: selects"></select>
              </li>
             <li>
                 <label for="goalAmount">Amount</label>
                 <input type="number" min="1" step="any" id="goalAmount" name="goalAmount" data-bind="value: goalAmount" placeholder="22.99">
             </li>
             <li>
-                <label for="goalDateTimeStart">Time start</label>
+                <label for="goalDateTimeStart">Start</label>
                 <input id="goalDateTimeStart" name="goalDateTimeStart" data-bind="value: goalDateTimeStart">
             </li>
             <li>
-                <label for="goalDateTimeEnd">Time end</label>
+                <label for="goalDateTimeEnd">End</label>
                 <input id="goalDateTimeEnd" name="goalDateTimeEnd" data-bind="value: goalDateTimeEnd">
             </li>
             <li>

@@ -65,7 +65,7 @@ app.localization.registerView('addGoalView');
     parent.onShow = function() {
         $('#goalAmount').val('');
         $('#goalTitle').val('');
-        $('#addGoalCategories').val($('#selects option:first').val());
+        $('#addGoalCategories').val($('#addGoalCategories option:first').val());
         $('#goalDateTimeStart').val('');
         $('#goalDateTimeEnd').val('');
     };
