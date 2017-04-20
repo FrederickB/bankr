@@ -383,6 +383,7 @@ function createChart(categoriesPercentage) {
                 field: 'percentage',
                 categoryField: 'category'
             }],
+            seriesColors: ['#f44242', '#f4e841', '#82f441', '#4191f4', '#b70000', '#e0dc00', '#0e5e00', '#000a5e'],
             tooltip: {
                 visible: true,
                 template: "#= category #: #= kendo.format('{0:P}', percentage) # - #= dataItem.total #$"
